@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="222.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thomaskuenneth.temperatureconverter.FXMLDocumentController">
+    <children>
+      <HBox alignment="BASELINE_LEFT" layoutX="14.0" layoutY="14.0" prefWidth="400.0" spacing="20.0">
+         <children>
+            <TextField fx:id="input" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="160.0" promptText="Temperature" />
+            <RadioButton fx:id="srcCelsius" mnemonicParsing="false" selected="true" text="°C">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tempSrc" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="srcFahrenheit" mnemonicParsing="false" text="°F" toggleGroup="$tempSrc" />
+            <RadioButton fx:id="srcKelvin" mnemonicParsing="false" text="K" toggleGroup="$tempSrc" />
+         </children>
+      </HBox>
+      <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="57.0" prefWidth="400.0" spacing="20.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="160.0" text="convert into" />
+            <RadioButton fx:id="destiCelsius" mnemonicParsing="false" selected="true" text="°C">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tempDesti" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="destiFahrenheit" mnemonicParsing="false" text="°F" toggleGroup="$tempDesti" />
+            <RadioButton fx:id="destiKelvin" mnemonicParsing="false" text="K" toggleGroup="$tempDesti" />
+         </children>
+      </HBox>
+      <Button fx:id="calculate" layoutX="170.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Calculate" />
+      <Label fx:id="result" alignment="CENTER" layoutX="8.0" layoutY="154.0" prefHeight="54.0" prefWidth="401.0" text="result">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
