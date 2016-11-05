@@ -13,7 +13,7 @@
     <children>
       <HBox alignment="BASELINE_LEFT" layoutX="14.0" layoutY="14.0" prefWidth="400.0" spacing="20.0">
          <children>
-            <TextField fx:id="input" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="160.0" promptText="Temperature" />
+            <TextField fx:id="input" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="160.0" promptText="%hint" />
             <RadioButton fx:id="srcCelsius" mnemonicParsing="false" selected="true" text="°C">
                <toggleGroup>
                   <ToggleGroup fx:id="tempSrc" />
@@ -25,7 +25,7 @@
       </HBox>
       <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="57.0" prefWidth="400.0" spacing="20.0">
          <children>
-            <Label prefHeight="17.0" prefWidth="160.0" text="convert into" />
+            <Label prefHeight="17.0" prefWidth="160.0" text="%convert_into" />
             <RadioButton fx:id="destiCelsius" mnemonicParsing="false" selected="true" text="°C">
                <toggleGroup>
                   <ToggleGroup fx:id="tempDesti" />
@@ -35,8 +35,8 @@
             <RadioButton fx:id="destiKelvin" mnemonicParsing="false" text="K" toggleGroup="$tempDesti" />
          </children>
       </HBox>
-      <Button fx:id="calculate" layoutX="170.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Calculate" />
-      <Label fx:id="result" alignment="CENTER" layoutX="8.0" layoutY="154.0" prefHeight="54.0" prefWidth="401.0" text="result">
+      <Button fx:id="calculate" layoutX="170.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleButtonAction" text="%calculate" />
+      <Label fx:id="result" alignment="CENTER" layoutX="8.0" layoutY="154.0" prefHeight="54.0" prefWidth="401.0" text="%result">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>

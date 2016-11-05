@@ -20,7 +20,9 @@
  */
 package com.thomaskuenneth.temperatureconverter;
 
+import java.util.ResourceBundle;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -28,12 +30,16 @@ import javafx.stage.Stage;
 
 public class TemperatureConverter extends Application {
 
+    private static final ResourceBundle BUNDLE
+            = ResourceBundle.getBundle("com.thomaskuenneth.temperatureconverter.strings");
+
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"),
+                BUNDLE);
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Temperature Converter");
+        stage.setTitle(getString("title"));
         stage.setResizable(false);
         stage.sizeToScene();
         stage.show();
@@ -41,5 +47,12 @@ public class TemperatureConverter extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public static String getString(String key) {
+        if (BUNDLE.containsKey(key)) {
+            return BUNDLE.getString(key);
+        }
+        return "<no resource found>";
     }
 }
