@@ -21,10 +21,6 @@
 package com.thomaskuenneth.temperatureconverter;
 
 import java.net.URL;
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.text.ParsePosition;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,8 +32,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
-import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
+import javafx.util.converter.DoubleStringConverter;
 
 public class FXMLDocumentController implements Initializable {
 
@@ -76,60 +72,95 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label result;
 
+    private final Model model = new Model();
+
     @FXML
     void handleButtonAction(ActionEvent event) {
-        String txt = input.getText();
-        Converter r = new Converter();
-        try {
-            double in = r.stringToDouble(txt);
-            double kelvin;
-            Toggle selectedSrc = tempSrc.getSelectedToggle();
-            if (selectedSrc.equals(srcCelsius)) {
-                kelvin = r.celsiusToKelvin(in);
-            } else if (selectedSrc.equals(srcFahrenheit)) {
-                kelvin = r.fahrenheitToKelvin(in);
-            } else {
-                kelvin = in;
-            }
-            Toggle selectedDesti = tempDesti.getSelectedToggle();
-            String out;
-            if (selectedDesti.equals(destiCelsius)) {
-                out = r.celsiusToString(r.kelvinToCelsius(kelvin));
-            } else if (selectedDesti.equals(destiFahrenheit)) {
-                out = r.fahrenheitToString(r.kelvinToFahrenheit(kelvin));
-            } else {
-                out = r.kelvinToString(kelvin);
-            }
-            result.setText(out);
-        } catch (ParseException ex) {
-            LOGGER.log(Level.SEVERE, "handleButtonAction()", ex);
-        }
+        model.setInTemperature(Double.valueOf(input.getText()));
+        model.calculateOutTemperature();
+        updateOutTemperatureFromModel();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        result.setText("");
+        tempSrc.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == srcCelsius) {
+                model.setInUnit(Model.TEMPERATURE_UNIT.DEGREES_CELSIUS);
+            } else if (newValue == srcFahrenheit) {
+                model.setInUnit(Model.TEMPERATURE_UNIT.DEGREES_FAHRENHEIT);
+            } else if (newValue == srcKelvin) {
+                model.setInUnit(Model.TEMPERATURE_UNIT.KELVIN);
+            } else {
+                LOGGER.log(Level.SEVERE, "Unexpected input unit");
+            }
+        });
+        tempDesti.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == destiCelsius) {
+                model.setOutUnit(Model.TEMPERATURE_UNIT.DEGREES_CELSIUS);
+            } else if (newValue == destiFahrenheit) {
+                model.setOutUnit(Model.TEMPERATURE_UNIT.DEGREES_FAHRENHEIT);
+            } else if (newValue == destiKelvin) {
+                model.setOutUnit(Model.TEMPERATURE_UNIT.KELVIN);
+            } else {
+                LOGGER.log(Level.SEVERE, "Unexpected output unit");
+            }
+        });
+        input.setTextFormatter(
+                new TextFormatter(
+                        new DoubleStringConverter()));
         input.textProperty().addListener((observable, oldValue, newValue) -> {
             updateCalculateButton();
         });
+        updateInputUnitFromModel();
+        updateOutputUnitFromModel();
+        updateInTemperatureFromModel();
+        updateOutTemperatureFromModel();
         updateCalculateButton();
-        // see http://stackoverflow.com/a/31043122/5956451
-        NumberFormat f = NumberFormat.getInstance(Locale.getDefault());
-        input.setTextFormatter(new TextFormatter<>(c -> {
-            if (c.getControlNewText().isEmpty()) {
-                return c;
-            }
-            ParsePosition parsePosition = new ParsePosition(0);
-            Object object = f.parse(c.getControlNewText(), parsePosition);
-            if (object == null || parsePosition.getIndex() < c.getControlNewText().length()) {
-                return null;
-            } else {
-                return c;
-            }
-        }));
     }
 
     private void updateCalculateButton() {
         calculate.setDisable(input.getText().length() < 1);
+    }
+
+    private void updateInputUnitFromModel() {
+        model.calculateOutTemperature();
+        switch (model.getInUnit()) {
+            case DEGREES_CELSIUS:
+                srcCelsius.setSelected(true);
+                break;
+            case DEGREES_FAHRENHEIT:
+                srcFahrenheit.setSelected(true);
+                break;
+            case KELVIN:
+                srcKelvin.setSelected(true);
+                break;
+            default:
+                throw new IllegalArgumentException("Unexpected input unit");
+        }
+    }
+
+    private void updateOutputUnitFromModel() {
+        switch (model.getOutUnit()) {
+            case DEGREES_CELSIUS:
+                destiCelsius.setSelected(true);
+                break;
+            case DEGREES_FAHRENHEIT:
+                destiFahrenheit.setSelected(true);
+                break;
+            case KELVIN:
+                destiKelvin.setSelected(true);
+                break;
+            default:
+                throw new IllegalArgumentException("Unexpected output unit");
+        }
+    }
+
+    private void updateInTemperatureFromModel() {
+        Double inTemperature = model.getInTemperature();
+        input.setText(inTemperature == null ? "" : inTemperature.toString());
+    }
+
+    private void updateOutTemperatureFromModel() {
+        result.setText(model.getOutTemperatureAsString());
     }
 }
