@@ -26,49 +26,49 @@ import java.text.ParseException;
 
 public class Converter {
 
-    public double stringToDouble(String s) throws ParseException {
+    public static double stringToDouble(String s) throws ParseException {
         NumberFormat df = DecimalFormat.getInstance();
         Number n = df.parse(s);
         return n.doubleValue();
     }
 
-    public double celsiusToKelvin(double celsius) {
+    public static double celsiusToKelvin(double celsius) {
         return 273.15 + celsius;
     }
-    
-    public double fahrenheitToKelvin(double fahrenheit) {
+
+    public static double fahrenheitToKelvin(double fahrenheit) {
         return (fahrenheit + 459.67) * 5f / 9f;
     }
-    
-    public double kelvinToCelsius(double kelvin) {
+
+    public static double kelvinToCelsius(double kelvin) {
         return kelvin - 273.15;
     }
-    
-    public double kelvinToFahrenheit(double kelvin) {
+
+    public static double kelvinToFahrenheit(double kelvin) {
         return kelvin * 1.8 - 459.67;
     }
 
-    public double celsiusToFahrenheit(double celsius) {
+    public static double celsiusToFahrenheit(double celsius) {
         return (celsius * 1.8) + 32.0;
     }
 
-    public double fahrenheitToCelsius(double fahrenheit) {
+    public static double fahrenheitToCelsius(double fahrenheit) {
         return (fahrenheit - 32) * (5.0 / 9.0);
     }
 
-    public String celsiusToString(double celsius) {
+    public static String celsiusToString(double celsius) {
         return doubleToString(celsius, "°C");
     }
 
-    public String fahrenheitToString(double fahrenheit) {
+    public static String fahrenheitToString(double fahrenheit) {
         return doubleToString(fahrenheit, "°F");
     }
 
-    public String kelvinToString(double kelvin) {
+    public static String kelvinToString(double kelvin) {
         return doubleToString(kelvin, "K");
     }
 
-    private String doubleToString(double val, String suffix) {
+    private static String doubleToString(double val, String suffix) {
         return String.format("%s %s",
                 (val == (long) val)
                         ? String.format("%d", (long) val)

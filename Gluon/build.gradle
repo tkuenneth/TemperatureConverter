@@ -28,12 +28,14 @@ jfxmobile {
         plugins 'display', 'lifecycle', 'statusbar', 'storage'
     }
     android {
+        androidSdk = '/Users/thomas/Library/Android/sdk'
         manifest = 'src/android/AndroidManifest.xml'
         compileSdkVersion = 24
     }
     ios {
         infoPList = file('src/ios/Default-Info.plist')
         forceLinkClasses = [
+                'com.thomaskuenneth.temperatureconverter.**.*',
                 'com.gluonhq.**.*',
                 'javax.annotations.**.*',
                 'javax.inject.**.*',
