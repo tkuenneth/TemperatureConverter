@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Temperature Converter</string>
+    <string name="degrees_celsius">°C</string>
+    <string name="degrees_fahrenheit">°F</string>
+    <string name="kelvin">K</string>
+    <string name="calculate">Calculate</string>
+    <string name="hint">Temperature</string>
+    <string name="label">Convert to</string>
+</resources>
