@@ -126,13 +126,13 @@ public class FXMLDocumentController implements Initializable {
         model.calculateOutTemperature();
         switch (model.getInUnit()) {
             case DEGREES_CELSIUS:
-                srcCelsius.setSelected(true);
+                tempSrc.selectToggle(srcCelsius);
                 break;
             case DEGREES_FAHRENHEIT:
-                srcFahrenheit.setSelected(true);
+                tempSrc.selectToggle(srcFahrenheit);
                 break;
             case KELVIN:
-                srcKelvin.setSelected(true);
+                tempSrc.selectToggle(srcKelvin);
                 break;
             default:
                 throw new IllegalArgumentException("Unexpected input unit");
@@ -142,13 +142,13 @@ public class FXMLDocumentController implements Initializable {
     private void updateOutputUnitFromModel() {
         switch (model.getOutUnit()) {
             case DEGREES_CELSIUS:
-                destiCelsius.setSelected(true);
+                tempDesti.selectToggle(destiCelsius);
                 break;
             case DEGREES_FAHRENHEIT:
-                destiFahrenheit.setSelected(true);
+                tempDesti.selectToggle(destiFahrenheit);
                 break;
             case KELVIN:
-                destiKelvin.setSelected(true);
+                tempDesti.selectToggle(destiKelvin);
                 break;
             default:
                 throw new IllegalArgumentException("Unexpected output unit");
