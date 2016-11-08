@@ -304,6 +304,28 @@ public class MyViewController extends UIViewController {
 		view.setDelegate(new UIPickerViewDelegate() {
 
 			@Override
+			public void pickerViewDidSelectRowInComponent(UIPickerView pickerView,
+														  @NInt long row,
+														  @NInt long component) {
+				Model.TEMPERATURE_UNIT newUnit;
+				switch ((int) row) {
+					case 0:
+						newUnit = Model.TEMPERATURE_UNIT.DEGREES_CELSIUS;
+						break;
+					case 1:
+						newUnit = Model.TEMPERATURE_UNIT.DEGREES_FAHRENHEIT;
+						break;
+					default:
+						newUnit = Model.TEMPERATURE_UNIT.KELVIN;
+				}
+				if (pickerView == tempSrc()) {
+					model.setInUnit(newUnit);
+				} else if (pickerView == tempDesti()) {
+					model.setOutUnit(newUnit);
+				}
+			}
+
+			@Override
 			public String pickerViewTitleForRowForComponent(UIPickerView pickerView,
 															@NInt long row,
 															@NInt long component) {
