@@ -25,11 +25,9 @@ import java.util.ResourceBundle;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.FlowPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -42,15 +40,13 @@ public class TemperatureConverter extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"),
                 BUNDLE);
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
         stage.setTitle(getString("title"));
         stage.setResizable(false);
         if (Platform.isDesktop()) {
-            stage.setScene(new Scene(root));
             stage.sizeToScene();
         } else {
-            FlowPane fp = new FlowPane(root);
-            fp.setAlignment(Pos.CENTER);
-            stage.setScene(new Scene(fp));
             Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
             stage.setX(bounds.getMinX());
             stage.setY(bounds.getMinY());
