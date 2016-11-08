@@ -22,37 +22,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n16-us-fyx" userLabel="tempSrc">
-                                <rect key="frame" x="198" y="28" width="107" height="49"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Convert into" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHv-AE-W5b">
                                 <rect key="frame" x="20" y="118" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJD-2O-kF1" userLabel="tempDesti">
-                                <rect key="frame" x="198" y="104" width="107" height="49"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpj-1D-hrg">
                                 <rect key="frame" x="20" y="177" width="64" height="30"/>
                                 <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculate:" destination="5BO-DY-N7e" eventType="touchUpInside" id="z75-DO-JjG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L30-oJ-6uU">
                                 <rect key="frame" x="20" y="229" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="calculate" destination="Kpj-1D-hrg" id="rXe-DW-bBc"/>
-                        <outlet property="input" destination="9fQ-X1-otS" id="nA7-1Q-kOD"/>
-                        <outlet property="result" destination="L30-oJ-6uU" id="8Ir-Lr-RNH"/>
-                        <outlet property="tempDesti" destination="tJD-2O-kF1" id="9Ea-T7-ufF"/>
-                        <outlet property="tempSrc" destination="n16-us-fyx" id="T1b-U3-EkS"/>
+                        <outlet property="input" destination="9fQ-X1-otS" id="v2b-R3-Jcx"/>
+                        <outlet property="result" destination="L30-oJ-6uU" id="Pzp-sC-Mvp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zH-HQ-02V" userLabel="First Responder" sceneMemberID="firstResponder"/>
