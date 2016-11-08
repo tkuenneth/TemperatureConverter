@@ -25,6 +25,10 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.UITextField;
+import apple.uikit.UIPickerView;
+import apple.uikit.UIButton;
+import apple.uikit.UILabel;
 
 @Generated
 @Runtime(ObjCRuntime.class)
@@ -172,4 +176,104 @@ public class MyViewController extends UIViewController {
 	@Selector("version")
 	@NInt
 	public static native long version_static();
+
+	@Generated
+	@Selector("input")
+	public native UITextField input();
+
+	@Generated
+	@Selector("setInput:")
+	public native void setInput_unsafe(UITextField value);
+
+	@Generated
+	public void setInput(UITextField value) {
+		Object __old = input();
+		if (value != null) {
+			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+		}
+		setInput_unsafe(value);
+		if (__old != null) {
+			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+		}
+	}
+
+	@Generated
+	@Selector("setTempSrc:")
+	public native void setTempSrc_unsafe(UIPickerView value);
+
+	@Generated
+	public void setTempSrc(UIPickerView value) {
+		Object __old = tempSrc();
+		if (value != null) {
+			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+		}
+		setTempSrc_unsafe(value);
+		if (__old != null) {
+			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+		}
+	}
+
+	@Generated
+	@Selector("tempSrc")
+	public native UIPickerView tempSrc();
+
+	@Generated
+	@Selector("calculate")
+	public native UIButton calculate();
+
+	@Generated
+	@Selector("result")
+	public native UILabel result();
+
+	@Generated
+	@Selector("setCalculate:")
+	public native void setCalculate_unsafe(UIButton value);
+
+	@Generated
+	public void setCalculate(UIButton value) {
+		Object __old = calculate();
+		if (value != null) {
+			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+		}
+		setCalculate_unsafe(value);
+		if (__old != null) {
+			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+		}
+	}
+
+	@Generated
+	@Selector("setResult:")
+	public native void setResult_unsafe(UILabel value);
+
+	@Generated
+	public void setResult(UILabel value) {
+		Object __old = result();
+		if (value != null) {
+			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+		}
+		setResult_unsafe(value);
+		if (__old != null) {
+			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+		}
+	}
+
+	@Generated
+	@Selector("setTempDesti:")
+	public native void setTempDesti_unsafe(UIPickerView value);
+
+	@Generated
+	public void setTempDesti(UIPickerView value) {
+		Object __old = tempDesti();
+		if (value != null) {
+			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+		}
+		setTempDesti_unsafe(value);
+		if (__old != null) {
+			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+		}
+	}
+
+	@Generated
+	@Selector("tempDesti")
+	public native UIPickerView tempDesti();
 }

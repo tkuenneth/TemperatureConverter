@@ -10,8 +10,15 @@
 
 @interface MyViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *input;
 
+@property (weak, nonatomic) IBOutlet UIPickerView *tempSrc;
 
+@property (weak, nonatomic) IBOutlet UIPickerView *tempDesti;
+
+@property (weak, nonatomic) IBOutlet UIButton *calculate;
+
+@property (weak, nonatomic) IBOutlet UILabel *result;
 
 
 @end
