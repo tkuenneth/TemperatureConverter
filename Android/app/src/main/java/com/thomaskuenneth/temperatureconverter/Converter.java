@@ -26,6 +26,10 @@ import java.text.ParseException;
 
 public class Converter {
 
+    public static final String DEGREES_CELSIUS = "°C";
+    public static final String DEGREES_FAHRENHEIT = "°F";
+    public static final String KELVIN = "K";
+
     public static double stringToDouble(String s) throws ParseException {
         NumberFormat df = DecimalFormat.getInstance();
         Number n = df.parse(s);
@@ -57,15 +61,15 @@ public class Converter {
     }
 
     public static String celsiusToString(double celsius) {
-        return doubleToString(celsius, "°C");
+        return doubleToString(celsius, DEGREES_CELSIUS);
     }
 
     public static String fahrenheitToString(double fahrenheit) {
-        return doubleToString(fahrenheit, "°F");
+        return doubleToString(fahrenheit, DEGREES_FAHRENHEIT);
     }
 
     public static String kelvinToString(double kelvin) {
-        return doubleToString(kelvin, "K");
+        return doubleToString(kelvin, KELVIN);
     }
 
     private static String doubleToString(double val, String suffix) {
