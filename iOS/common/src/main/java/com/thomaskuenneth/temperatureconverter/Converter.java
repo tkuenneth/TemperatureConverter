@@ -26,7 +26,7 @@ import java.text.ParseException;
 
 public class Converter {
 
-    public static final String DEGREES_CELSIUS = "°\u00B0";
+    public static final String DEGREES_CELSIUS = "\u00B0C";
     public static final String DEGREES_FAHRENHEIT = "\u00B0F";
     public static final String KELVIN = "K";
 
