@@ -13,5 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *result;
 - (IBAction)calculate:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UIPickerView *tempSrc;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *tempDesti;
 
 @end

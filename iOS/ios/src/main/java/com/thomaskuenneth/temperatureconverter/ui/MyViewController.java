@@ -1,6 +1,7 @@
 package com.thomaskuenneth.temperatureconverter.ui;
 
 
+import com.thomaskuenneth.temperatureconverter.Converter;
 import com.thomaskuenneth.temperatureconverter.Model;
 
 import apple.NSObject;
@@ -32,8 +33,10 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.UITextField;
+import apple.uikit.UIPickerView;
+import apple.uikit.protocol.UIPickerViewDataSource;
+import apple.uikit.protocol.UIPickerViewDelegate;
 
-@Generated
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("MyViewController")
 @RegisterOnStartup
@@ -226,11 +229,84 @@ public class MyViewController extends UIViewController {
 		result().setText(input().text());
 	}
 
+	@Generated
+	@Selector("setTempDesti:")
+	public native void setTempDesti_unsafe(UIPickerView value);
+
+	@Generated
+	public void setTempDesti(UIPickerView value) {
+		Object __old = tempDesti();
+		if (value != null) {
+			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+		}
+		setTempDesti_unsafe(value);
+		if (__old != null) {
+			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+		}
+	}
+
+	@Generated
+	@Selector("setTempSrc:")
+	public native void setTempSrc_unsafe(UIPickerView value);
+
+	@Generated
+	public void setTempSrc(UIPickerView value) {
+		Object __old = tempSrc();
+		if (value != null) {
+			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+		}
+		setTempSrc_unsafe(value);
+		if (__old != null) {
+			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+		}
+	}
+
+	@Generated
+	@Selector("tempDesti")
+	public native UIPickerView tempDesti();
+
+	@Generated
+	@Selector("tempSrc")
+	public native UIPickerView tempSrc();
+
+
 	private Model model;
 
 	@Override
 	public void viewDidLoad() {
 		model = new Model();
+		configureUIPickerView(tempSrc());
+		//configureUIPickerView(tempDesti());
+
+		tempSrc().selectRowInComponentAnimated(0, 0, false);
+	//	tempDesti().selectRowInComponentAnimated(1, 0, false);
 		result().setText("");
+	}
+
+	private void configureUIPickerView(UIPickerView view) {
+		final String [] values = {Converter.DEGREES_CELSIUS,
+		Converter.DEGREES_FAHRENHEIT, Converter.KELVIN};
+		view.setDataSource(new UIPickerViewDataSource() {
+
+			@Override
+			public long numberOfComponentsInPickerView(UIPickerView pickerView) {
+				return 1;
+			}
+
+			@Override
+			public long pickerViewNumberOfRowsInComponent(UIPickerView pickerView,
+														  @NInt long component) {
+				return values.length;
+			}
+		});
+		view.setDelegate(new UIPickerViewDelegate() {
+
+			@Override
+			public String pickerViewTitleForRowForComponent(UIPickerView pickerView,
+															@NInt long row,
+															@NInt long component) {
+				return values[(int) row];
+			}
+		});
 	}
 }

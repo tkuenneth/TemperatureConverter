@@ -41,12 +41,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ibg-Hd-1tO" userLabel="tempSrc">
+                                <rect key="frame" x="179" y="32" width="93" height="41"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-l5-665" userLabel="tempDesti">
+                                <rect key="frame" x="179" y="103" width="93" height="41"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="input" destination="9fQ-X1-otS" id="v2b-R3-Jcx"/>
                         <outlet property="result" destination="L30-oJ-6uU" id="Pzp-sC-Mvp"/>
+                        <outlet property="tempDesti" destination="PRv-l5-665" id="bVa-fn-iz1"/>
+                        <outlet property="tempSrc" destination="PRv-l5-665" id="sNf-IK-Byu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zH-HQ-02V" userLabel="First Responder" sceneMemberID="firstResponder"/>
