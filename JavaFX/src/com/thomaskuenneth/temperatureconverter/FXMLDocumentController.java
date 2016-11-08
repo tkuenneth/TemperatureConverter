@@ -76,9 +76,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void handleButtonAction(ActionEvent event) {
-        model.setInTemperature(Double.valueOf(input.getText()));
-        model.calculateOutTemperature();
-        updateOutTemperatureFromModel();
+        performComputation(input.getText());
     }
 
     @Override
@@ -162,5 +160,11 @@ public class FXMLDocumentController implements Initializable {
 
     private void updateOutTemperatureFromModel() {
         result.setText(model.getOutTemperatureAsString());
+    }
+
+    private void performComputation(String txt) {
+        model.setInTemperature(Double.valueOf(txt));
+        model.calculateOutTemperature();
+        updateOutTemperatureFromModel();
     }
 }
