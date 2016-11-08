@@ -226,7 +226,7 @@ public class MyViewController extends UIViewController {
 
 	@Selector("calculate:")
 	public void calculate(UIButton sender) {
-		result().setText(input().text());
+		performComputation(input().text());
 	}
 
 	@Generated
@@ -276,11 +276,13 @@ public class MyViewController extends UIViewController {
 	public void viewDidLoad() {
 		model = new Model();
 		configureUIPickerView(tempSrc());
-		//configureUIPickerView(tempDesti());
+		configureUIPickerView(tempDesti());
 
-		tempSrc().selectRowInComponentAnimated(0, 0, false);
-	//	tempDesti().selectRowInComponentAnimated(1, 0, false);
-		result().setText("");
+		updateInputUnitFromModel();
+		updateOutputUnitFromModel();
+		updateInTemperatureFromModel();
+		updateOutTemperatureFromModel();
+		updateCalculateButton();
 	}
 
 	private void configureUIPickerView(UIPickerView view) {
@@ -308,5 +310,60 @@ public class MyViewController extends UIViewController {
 				return values[(int) row];
 			}
 		});
+	}
+
+	// ---------------------------
+
+
+	// FIXME: outlet fehlt
+	private void updateCalculateButton() {
+		// calculate().setEnabled(input().text().length() > 0);
+	}
+
+	private void updateInputUnitFromModel() {
+		long temp = -1;
+		switch (model.getInUnit()) {
+			case DEGREES_CELSIUS:
+				temp = 0;
+				break;
+			case DEGREES_FAHRENHEIT:
+				temp = 1;
+				break;
+			case KELVIN:
+				temp = 2;
+				break;
+		}
+		tempSrc().selectRowInComponentAnimated(temp, 0, false);
+	}
+
+	private void updateOutputUnitFromModel() {
+		long temp = -1;
+		switch (model.getOutUnit()) {
+			case DEGREES_CELSIUS:
+				temp = 0;
+				break;
+			case DEGREES_FAHRENHEIT:
+				temp = 1;
+				break;
+			case KELVIN:
+				temp = 2;
+				break;
+		}
+		tempDesti().selectRowInComponentAnimated(temp, 0, false);
+	}
+
+	private void updateInTemperatureFromModel() {
+		Double inTemperature = model.getInTemperature();
+		input().setText(inTemperature == null ? "" : inTemperature.toString());
+	}
+
+	private void updateOutTemperatureFromModel() {
+		result().setText(model.getOutTemperatureAsString());
+	}
+
+	private void performComputation(String txt) {
+		model.setInTemperature(Double.valueOf(txt));
+		model.calculateOutTemperature();
+		updateOutTemperatureFromModel();
 	}
 }

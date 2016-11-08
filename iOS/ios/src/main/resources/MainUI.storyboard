@@ -54,7 +54,7 @@
                         <outlet property="input" destination="9fQ-X1-otS" id="v2b-R3-Jcx"/>
                         <outlet property="result" destination="L30-oJ-6uU" id="Pzp-sC-Mvp"/>
                         <outlet property="tempDesti" destination="PRv-l5-665" id="bVa-fn-iz1"/>
-                        <outlet property="tempSrc" destination="PRv-l5-665" id="sNf-IK-Byu"/>
+                        <outlet property="tempSrc" destination="Ibg-Hd-1tO" id="s1D-z0-Xy7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zH-HQ-02V" userLabel="First Responder" sceneMemberID="firstResponder"/>

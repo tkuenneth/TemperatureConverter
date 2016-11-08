@@ -12,8 +12,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *input;
 @property (weak, nonatomic) IBOutlet UILabel *result;
 - (IBAction)calculate:(UIButton *)sender;
-
 @property (weak, nonatomic) IBOutlet UIPickerView *tempSrc;
+
 
 @property (weak, nonatomic) IBOutlet UIPickerView *tempDesti;
 
