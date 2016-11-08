@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -58,11 +59,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         calculate = (Button) findViewById(R.id.calculate);
-        calculate.setOnClickListener((view) -> {
-            model.setInTemperature(Double.valueOf(input.getText().toString()));
-            model.calculateOutTemperature();
-            updateOutTemperatureFromModel();
-        });
         input = (EditText) findViewById(R.id.input);
         input.addTextChangedListener(new TextWatcher() {
 
@@ -89,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
         updateInTemperatureFromModel();
         updateOutTemperatureFromModel();
         updateCalculateButton();
+    }
+
+    public void handleButtonAction(View view) {
+        performComputation(input.getText().toString());
     }
 
     private void updateCalculateButton() {
@@ -135,5 +135,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateOutTemperatureFromModel() {
         result.setText(model.getOutTemperatureAsString());
+    }
+
+    private void performComputation(String txt) {
+        model.setInTemperature(Double.valueOf(txt));
+        model.calculateOutTemperature();
+        updateOutTemperatureFromModel();
     }
 }

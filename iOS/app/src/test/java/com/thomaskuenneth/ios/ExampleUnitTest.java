@@ -1,4 +1,4 @@
-package com.thomaskuenneth.temperatureconverter;
+package com.thomaskuenneth.ios;
 
 import org.junit.Test;
 

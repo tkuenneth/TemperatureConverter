@@ -1,4 +1,4 @@
-package com.thomaskuenneth.temperatureconverter;
+package com.thomaskuenneth.ios;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.thomaskuenneth.temperatureconverter", appContext.getPackageName());
+        assertEquals("com.thomaskuenneth.ios", appContext.getPackageName());
     }
 }

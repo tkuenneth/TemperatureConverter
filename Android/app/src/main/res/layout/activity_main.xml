@@ -99,6 +99,7 @@
         android:text="@string/calculate"
         android:layout_below="@id/tempDesti"
         android:layout_centerHorizontal="true"
+        android:onClick="handleButtonAction"
         />
 
     <TextView
