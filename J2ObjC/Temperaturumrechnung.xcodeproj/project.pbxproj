@@ -1,0 +1,332 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E907CFA11CB7F91D005E6BD4 /* Rechnen.java in Sources */ = {isa = PBXBuildFile; fileRef = E907CFA01CB7F91D005E6BD4 /* Rechnen.java */; };
+		E9B570491CB1919E00CCEBD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B570481CB1919E00CCEBD6 /* main.m */; };
+		E9B5704C1CB1919E00CCEBD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B5704B1CB1919E00CCEBD6 /* AppDelegate.m */; };
+		E9B5704F1CB1919E00CCEBD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B5704E1CB1919E00CCEBD6 /* ViewController.m */; };
+		E9B570521CB1919E00CCEBD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B570501CB1919E00CCEBD6 /* Main.storyboard */; };
+		E9B570541CB1919E00CCEBD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9B570531CB1919E00CCEBD6 /* Assets.xcassets */; };
+		E9B570571CB1919E00CCEBD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B570551CB1919E00CCEBD6 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		E9082AE71CB620B0003D2F33 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.java;
+			isEditable = 1;
+			outputFiles = (
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}.h",
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}.m",
+			);
+			script = "/opt/j2objc-1.0.2/j2objc -d ${DERIVED_FILES_DIR} -sourcepath ${PROJECT_DIR} --no-package-directories ${INPUT_FILE_PATH};";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		E907CFA01CB7F91D005E6BD4 /* Rechnen.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = Rechnen.java; sourceTree = "<group>"; };
+		E9B570441CB1919E00CCEBD6 /* Temperaturumrechnung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Temperaturumrechnung.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9B570481CB1919E00CCEBD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E9B5704A1CB1919E00CCEBD6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Test/AppDelegate.h; sourceTree = "<group>"; };
+		E9B5704B1CB1919E00CCEBD6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Test/AppDelegate.m; sourceTree = "<group>"; };
+		E9B5704D1CB1919E00CCEBD6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Test/ViewController.h; sourceTree = "<group>"; };
+		E9B5704E1CB1919E00CCEBD6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Test/ViewController.m; sourceTree = "<group>"; };
+		E9B570511CB1919E00CCEBD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E9B570531CB1919E00CCEBD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Test/Assets.xcassets; sourceTree = "<group>"; };
+		E9B570561CB1919E00CCEBD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E9B570581CB1919E00CCEBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Test/Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9B570411CB1919E00CCEBD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E9B5703B1CB1919E00CCEBD6 = {
+			isa = PBXGroup;
+			children = (
+				E907CFA01CB7F91D005E6BD4 /* Rechnen.java */,
+				E9B5704A1CB1919E00CCEBD6 /* AppDelegate.h */,
+				E9B5704B1CB1919E00CCEBD6 /* AppDelegate.m */,
+				E9B5704D1CB1919E00CCEBD6 /* ViewController.h */,
+				E9B5704E1CB1919E00CCEBD6 /* ViewController.m */,
+				E9B570501CB1919E00CCEBD6 /* Main.storyboard */,
+				E9B570531CB1919E00CCEBD6 /* Assets.xcassets */,
+				E9B570551CB1919E00CCEBD6 /* LaunchScreen.storyboard */,
+				E9B570581CB1919E00CCEBD6 /* Info.plist */,
+				E9B570471CB1919E00CCEBD6 /* Supporting Files */,
+				E9B570451CB1919E00CCEBD6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9B570451CB1919E00CCEBD6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9B570441CB1919E00CCEBD6 /* Temperaturumrechnung.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9B570471CB1919E00CCEBD6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9B570481CB1919E00CCEBD6 /* main.m */,
+			);
+			name = "Supporting Files";
+			path = Test;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9B570431CB1919E00CCEBD6 /* Temperaturumrechnung */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9B5705B1CB1919E00CCEBD6 /* Build configuration list for PBXNativeTarget "Temperaturumrechnung" */;
+			buildPhases = (
+				E9B570401CB1919E00CCEBD6 /* Sources */,
+				E9B570411CB1919E00CCEBD6 /* Frameworks */,
+				E9B570421CB1919E00CCEBD6 /* Resources */,
+			);
+			buildRules = (
+				E9082AE71CB620B0003D2F33 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = Temperaturumrechnung;
+			productName = Test;
+			productReference = E9B570441CB1919E00CCEBD6 /* Temperaturumrechnung.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9B5703C1CB1919E00CCEBD6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Thomas Künneth";
+				TargetAttributes = {
+					E9B570431CB1919E00CCEBD6 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = E9B5703F1CB1919E00CCEBD6 /* Build configuration list for PBXProject "Temperaturumrechnung" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9B5703B1CB1919E00CCEBD6;
+			productRefGroup = E9B570451CB1919E00CCEBD6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9B570431CB1919E00CCEBD6 /* Temperaturumrechnung */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9B570421CB1919E00CCEBD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9B570571CB1919E00CCEBD6 /* LaunchScreen.storyboard in Resources */,
+				E9B570541CB1919E00CCEBD6 /* Assets.xcassets in Resources */,
+				E9B570521CB1919E00CCEBD6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9B570401CB1919E00CCEBD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9B5704F1CB1919E00CCEBD6 /* ViewController.m in Sources */,
+				E9B5704C1CB1919E00CCEBD6 /* AppDelegate.m in Sources */,
+				E9B570491CB1919E00CCEBD6 /* main.m in Sources */,
+				E907CFA11CB7F91D005E6BD4 /* Rechnen.java in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E9B570501CB1919E00CCEBD6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9B570511CB1919E00CCEBD6 /* Base */,
+			);
+			name = Main.storyboard;
+			path = Test;
+			sourceTree = "<group>";
+		};
+		E9B570551CB1919E00CCEBD6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9B570561CB1919E00CCEBD6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = Test;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E9B570591CB1919E00CCEBD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E9B5705A1CB1919E00CCEBD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E9B5705C1CB1919E00CCEBD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "/opt/j2objc-1.0.2/lib";
+				"OTHER_LDFLAGS[arch=*]" = "-ljre_emul";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomaskuenneth.temperaturumrechnung;
+				PRODUCT_NAME = Temperaturumrechnung;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/opt/j2objc-1.0.2/include ${DERIVED_FILES_DIR}";
+			};
+			name = Debug;
+		};
+		E9B5705D1CB1919E00CCEBD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Test/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "/opt/j2objc-1.0.2/lib";
+				"OTHER_LDFLAGS[arch=*]" = "-ljre_emul";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomaskuenneth.temperaturumrechnung;
+				PRODUCT_NAME = Temperaturumrechnung;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/opt/j2objc-1.0.2/include ${DERIVED_FILES_DIR}";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9B5703F1CB1919E00CCEBD6 /* Build configuration list for PBXProject "Temperaturumrechnung" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9B570591CB1919E00CCEBD6 /* Debug */,
+				E9B5705A1CB1919E00CCEBD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9B5705B1CB1919E00CCEBD6 /* Build configuration list for PBXNativeTarget "Temperaturumrechnung" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9B5705C1CB1919E00CCEBD6 /* Debug */,
+				E9B5705D1CB1919E00CCEBD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E9B5703C1CB1919E00CCEBD6 /* Project object */;
+}
