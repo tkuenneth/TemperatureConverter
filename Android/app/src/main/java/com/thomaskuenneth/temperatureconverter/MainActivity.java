@@ -1,7 +1,7 @@
 package com.thomaskuenneth.temperatureconverter;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tempSrc = (RadioGroup) findViewById(R.id.tempSrc);
+        tempSrc = findViewById(R.id.tempSrc);
         tempSrc.setOnCheckedChangeListener((group, checked) -> {
             switch (checked) {
                 case R.id.srcCelsius:
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.e(TAG, "Unexpected input unit");
             }
         });
-        tempDesti = (RadioGroup) findViewById(R.id.tempDesti);
+        tempDesti = findViewById(R.id.tempDesti);
         tempDesti.setOnCheckedChangeListener((group, checked) -> {
             switch (checked) {
                 case R.id.destiCelsius:
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
                     Log.e(TAG, "Unexpected output unit");
             }
         });
-        calculate = (Button) findViewById(R.id.calculate);
-        input = (EditText) findViewById(R.id.input);
+        calculate = findViewById(R.id.calculate);
+        input = findViewById(R.id.input);
         input.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             calculate.performClick();
             return true;
         });
-        result = (TextView) findViewById(R.id.result);
+        result = findViewById(R.id.result);
         updateInputUnitFromModel();
         updateOutputUnitFromModel();
         updateInTemperatureFromModel();

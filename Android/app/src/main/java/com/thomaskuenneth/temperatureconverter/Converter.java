@@ -23,6 +23,7 @@ package com.thomaskuenneth.temperatureconverter;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.Locale;
 
 public class Converter {
 
@@ -73,9 +74,9 @@ public class Converter {
     }
 
     private static String doubleToString(double val, String suffix) {
-        return String.format("%s %s",
+        return String.format(Locale.US, "%s %s",
                 (val == (long) val)
-                        ? String.format("%d", (long) val)
-                        : String.format("%.2f", val), suffix);
+                        ? String.format(Locale.US, "%d", (long) val)
+                        : String.format(Locale.US, "%.2f", val), suffix);
     }
 }
